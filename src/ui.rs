@@ -1,12 +1,12 @@
 use eframe::egui;
 
-fn main() {
+pub fn main() {
     let native_options = eframe::NativeOptions::default();
     eframe::run_native("fvcommand", native_options, Box::new(|cc| Ok(Box::new(EguiApp::new(cc)))));
 }
 
 #[derive(Default)]
-struct EguiApp {}
+pub struct EguiApp {}
 
 impl EguiApp {
     fn new(cc: &eframe::CreationContext<'_>) -> Self {

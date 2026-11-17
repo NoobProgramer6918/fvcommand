@@ -17,5 +17,7 @@ fn main() {
     info!("Logger initialized!");
     info!("Starting...");
 
+    ui::main();
+
     exit_program(EXIT_SUCCESS);
 }
