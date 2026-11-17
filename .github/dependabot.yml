@@ -2,10 +2,10 @@ version: 2
 
 # PRs target `dev` per the branch flow in CONTRIBUTING.md
 # (<did>-<thing>-<type> -> dev -> main).
-target-branch: "dev"
 
 updates:
   - package-ecosystem: "cargo"
+    target-branch: "dev"
     directory: "/"
     schedule:
       interval: "weekly"
