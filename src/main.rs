@@ -1,3 +1,5 @@
+mod ui;
+
 use log::{info, warn, error, debug};
 
 pub static EXIT_SUCCESS: i32 = 0;
@@ -14,6 +16,8 @@ fn main() {
         .init();
     info!("Logger initialized!");
     info!("Starting...");
+
+    ui::main();
 
     exit_program(EXIT_SUCCESS);
 }
