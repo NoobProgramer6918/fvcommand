@@ -22,6 +22,7 @@ impl eframe::App for EguiApp {
     fn ui(&mut self, ui: &mut egui::Ui, frame: &mut eframe::Frame) {
         egui::CentralPanel::default().show(ui, |ui| {
             ui.heading("Hello World!");
+            ui.label("Test");
         });
     }
 }
