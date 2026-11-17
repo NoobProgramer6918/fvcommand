@@ -1,3 +1,5 @@
+mod ui;
+
 use log::{info, warn, error, debug};
 
 pub static EXIT_SUCCESS: i32 = 0;
