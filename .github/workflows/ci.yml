@@ -12,8 +12,8 @@ env:
 jobs:
   test:
     name: Test (${{ matrix.os }})
-    # The app is Windows-only (voice commands / microphone capture),
-    # but CI also runs on Ubuntu for cheap early feedback.
+    # Windows and Linux are both supported targets (Windows first),
+    # so build/test on both.
     strategy:
       fail-fast: false
       matrix:
