@@ -1,5 +1,9 @@
+mod ui_windows;
+
 use eframe::egui;
 use egui::Style;
+use log::info;
+use ui_windows::ui_windows as ui_win;
 
 const WINDOW_WIDTH: f32 = 420.0;
 const WINDOW_HEIGHT: f32 = 520.0;
@@ -8,6 +12,7 @@ const CARD_RADIUS: f32 = 12.0;
 const CLOSE_BUTTON_SIZE: f32 = 22.0;
 
 pub fn main() {
+    info!("Ran UI!");
     let viewport = egui::ViewportBuilder::default()
         .with_decorations(false)
         .with_transparent(true)
@@ -85,9 +90,12 @@ impl eframe::App for EguiApp {
 
                 ui.add_space(10.0);
                 ui.horizontal(|ui| {
-                    ui.add_space(10.0);
-                    ui.heading("Test");
-                });
+                    ui.add_space(15.0);
+                    ui.vertical(|ui| {
+                        ui.add_space(3.0);
+                        ui_win::test_win::test_win(ui);
+                    })
+                })
             });
     }
 }

@@ -1,6 +1,6 @@
 mod ui;
 
-use log::{info, warn, error, debug};
+use log::{debug, error, info, warn};
 
 pub static EXIT_SUCCESS: i32 = 0;
 pub static EXIT_FAILURE: i32 = 1;
@@ -12,11 +12,11 @@ pub fn exit_program(exit_code: i32) -> ! {
 }
 
 fn main() {
-    env_logger::Builder::from_env(env_logger::Env::default().default_filter_or("info"))
-        .init();
+    env_logger::Builder::from_env(env_logger::Env::default().default_filter_or("info")).init();
     info!("Logger initialized!");
     info!("Starting...");
 
+    info!("Starting UI!");
     ui::main();
 
     exit_program(EXIT_SUCCESS);
