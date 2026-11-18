@@ -1,0 +1,31 @@
+version: 2
+
+# PRs target `dev` per the branch flow in CONTRIBUTING.md
+# (<did>-<thing>-<type> -> dev -> main).
+
+updates:
+  - package-ecosystem: "cargo"
+    target-branch: "dev"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      # Bundle minor+patch bumps into one PR to keep noise down.
+      # Security updates are always separate and never grouped away.
+      cargo-minor-and-patch:
+        update-types:
+          - "minor"
+          - "patch"
+    open-pull-requests-limit: 10
+
+  - package-ecosystem: "github-actions"
+    target-branch: "dev"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      actions-minor-and-patch:
+        update-types:
+          - "minor"
+          - "patch"
+    open-pull-requests-limit: 10
